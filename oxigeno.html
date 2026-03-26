@@ -74,6 +74,71 @@
     }
     .btn-hero.whatsapp{background:var(--magenta);border-color:var(--magenta);color:#000;}
 
+    /* === NUEVA SECCIÓN SERVICIOS === */
+    .services{
+      padding:100px 5% 120px;
+      background:linear-gradient(135deg, #0a0a0a, #1a0033);
+      position:relative;
+      overflow:hidden;
+    }
+    .services::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),var(--cyan),transparent);
+    }
+    .section-title{
+      text-align:center;margin-bottom:70px;
+    }
+    .section-title h2{
+      font-size:clamp(2.8rem,8vw,4.5rem);font-weight:900;
+      background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--violet));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      text-shadow:0 0 40px var(--cyan);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:25px;
+      max-width:1400px;
+      margin:0 auto;
+    }
+    .service-card{
+      background:rgba(20,20,40,0.6);
+      border:2px solid rgba(0,255,255,0.2);
+      border-radius:15px;
+      padding:35px 25px;
+      transition:all 0.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .service-card::before{
+      content:'';position:absolute;top:-50%;left:-50%;width:60%;height:60%;
+      background:radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
+      opacity:0;transition:all 0.5s;
+    }
+    .service-card:hover{
+      transform:translateY(-15px);
+      border-color:var(--cyan);
+      box-shadow:0 0 40px var(--cyan);
+    }
+    .service-card:hover::before{opacity:1;top:-20%;left:-20%;}
+
+    .service-card h3{
+      font-size:1.55rem;margin-bottom:15px;color:var(--cyan);
+      text-shadow:0 0 15px var(--cyan);
+    }
+    .service-card p{
+      color:#ccc;line-height:1.6;font-size:1.05rem;
+    }
+    .service-card .ver-mas{
+      display:inline-block;margin-top:20px;
+      color:var(--magenta);font-weight:bold;text-decoration:none;
+      transition:0.3s;
+    }
+    .service-card .ver-mas:hover{
+      color:var(--lime);text-shadow:0 0 15px var(--lime);
+    }
+
     #particles-js{position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;}
     .scanline{
       position:absolute;top:0;width:100%;height:4px;
@@ -106,6 +171,7 @@
       nav.active{display:flex;}
       nav a{font-size:1.6rem;margin:15px 0;}
       .hero h1{letter-spacing:6px;}
+      .services{padding:80px 5% 90px;}
     }
   </style>
 </head>
@@ -123,7 +189,8 @@
     </div>
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#acceso">Servicios</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#acceso">Acceso</a>
       <a href="#cyber">Clientes</a>
       <a href="#drop">Tienda</a>
       <a href="#contacto">Contacto</a>
@@ -138,8 +205,84 @@
       <h1>RECARGA</h1>
       <p>Oxígeno Puro • Medicinal • Industrial<br>Respira el futuro.</p>
       <div class="hero-buttons">
-        <a href="#acceso" class="btn-hero">Más información</a>
+        <a href="#servicios" class="btn-hero">Ver Servicios</a>
         <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp">Whatsapp directo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NUESTRA SECCIÓN DE SERVICIOS ==================== -->
+  <section class="services" id="servicios">
+    <div class="section-title">
+      <h2>Nuestros Servicios</h2>
+      <p style="color:#aaa;margin-top:15px;font-size:1.3rem;">Modelos de atención en salud especializados, integrales e innovadores</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Atención Domiciliaria</h3>
+        <p>Consulta médica general para valoración y control en la comodidad de tu hogar.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Toma de Muestras de Laboratorio</h3>
+        <p>Pruebas clínicas básicas y especializadas: Covid-19, hemograma, glicemia, colesterol y más.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Atención por Enfermería 24h</h3>
+        <p>Valoración, cuidados, curaciones y aplicación de medicamentos especiales.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Auxiliar de Enfermería 24h</h3>
+        <p>Cuidados básicos, manejo de heridas y suministro de medicamentos.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Hospitalización Domiciliaria</h3>
+        <p>Asistencia completa de hospitalización en la comodidad de tu casa.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Apoyo Terapéutico y Rehabilitación</h3>
+        <p>Terapias físicas, respiratorias, ocupacionales y más.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Cuidados Paliativos</h3>
+        <p>Atención integral del paciente y acompañamiento a la familia.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Alquiler de Equipos Médicos</h3>
+        <p>Sillas de ruedas, camas hospitalarias, cámaras de oxígeno y más.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Suministro de Oxígeno</h3>
+        <p>Servicio de suministro de oxígeno medicinal a domicilio.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Suministro de Medicamentos</h3>
+        <p>Medicamentos e insumos médicos para atención ambulatoria y domiciliaria.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Pharma Médika</h3>
+        <p>Distribución y comercialización de productos farmacéuticos y dispositivos médicos especializados.</p>
+        <a href="#" class="ver-mas">Ver más →</a>
       </div>
     </div>
   </section>
